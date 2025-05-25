@@ -34,7 +34,7 @@ import jakarta.persistence.metamodel.Metamodel;
 import jakarta.persistence.metamodel.SingularAttribute;
 
 @Service
-public class service {
+public class OFService {
 
   @PersistenceContext
   private EntityManager entityManager;
