@@ -17,23 +17,23 @@ import jakarta.transaction.Transactional;
 @Transactional
 class DemoApplicationTests {
 
-  // @Autowired
-  // InitDataService initDataService;
+  @Autowired
+  InitDataService initDataService;
 
-  // @Autowired
-  // CompanyRepository companyRepo;
+  @Autowired
+  CompanyRepository companyRepo;
 
-  // @BeforeEach
-  // void setUp() {
-  // initDataService.initData();
-  // }
+  @BeforeEach
+  void setUp() {
+    initDataService.initData();
+  }
 
   @Test
   void hasData() {
-    // Long companyCount = companyRepo.count();
-    System.out.println("查询记录数");
-    // assertNotNull(companyCount);
-    // assertNotEquals(0, companyCount);
+    Long companyCount = companyRepo.count();
+    System.out.println("查询记录数" + companyCount);
+    assertNotNull(companyCount);
+    assertNotEquals(0, companyCount);
   }
 
 }
