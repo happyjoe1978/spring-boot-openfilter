@@ -1,4 +1,4 @@
-package com.orangstar.spring_boot_openapi_filter;
+package com.orangstar.server;
 
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
@@ -31,7 +31,7 @@ class DemoApplicationTests {
   @Test
   void hasData() {
     // Long companyCount = companyRepo.count();
-    // System.out.println("查询记录数" + companyCount);
+    System.out.println("查询记录数");
     // assertNotNull(companyCount);
     // assertNotEquals(0, companyCount);
   }
