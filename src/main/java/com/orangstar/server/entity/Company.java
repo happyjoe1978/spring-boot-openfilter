@@ -1,5 +1,6 @@
 package com.orangstar.server.entity;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import jakarta.persistence.CascadeType;
@@ -21,11 +22,11 @@ public class Company extends BaseEntity {
 
   @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
   @JoinColumn(name = "company_id", foreignKey = @ForeignKey(ConstraintMode.NO_CONSTRAINT))
-  private List<Department> departments;
+  private List<Department> departments = new ArrayList<>();
 
   @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
   @JoinColumn(name = "company_id", foreignKey = @ForeignKey(ConstraintMode.NO_CONSTRAINT))
-  private List<Member> members;
+  private List<Member> members = new ArrayList<>();
 
   public String getSerialNumber() {
     return serialNumber;
@@ -41,6 +42,22 @@ public class Company extends BaseEntity {
 
   public void setNum(String num) {
     this.num = num;
+  }
+
+  public List<Department> getDepartments() {
+    return departments;
+  }
+
+  public void setDepartments(List<Department> departments) {
+    this.departments = departments;
+  }
+
+  public List<Member> getMembers() {
+    return members;
+  }
+
+  public void setMembers(List<Member> members) {
+    this.members = members;
   }
 
   @Override

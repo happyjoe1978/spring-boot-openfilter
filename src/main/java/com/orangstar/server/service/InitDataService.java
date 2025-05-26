@@ -1,8 +1,13 @@
 package com.orangstar.server.service;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.orangstar.server.entity.Company;
+import com.orangstar.server.entity.Department;
 import com.orangstar.server.repository.CompanyRepository;
 import com.orangstar.server.repository.DepartmentRepository;
 import com.orangstar.server.repository.MemberRepository;
@@ -34,7 +39,35 @@ public class InitDataService {
   public void initData() {
     System.out.println("初始数据开始.....");
     cleanAll();
+    initCompanys();
     System.out.println("初始数据结束.....");
+  }
+
+  private void initCompanys() {
+    for (int i = 0; i < 17; i++)
+      createCompany(i);
+  }
+
+  private void createCompany(Integer index) {
+    Company c = new Company();
+    c.setNum(index + "");
+    c.setName("company-" + index);
+    if (index < 8)
+      c.setStatus(1);
+    else
+      c.setStatus(0);
+    c.setDepartments(createDepartments());
+    companyRepo.save(c);
+  }
+
+  private List<Department> createDepartments() {
+    List<Department> depts = new ArrayList<>();
+    for (int i = 0; i < 16; i++) {
+      Department d = new Department();
+      d.setName("dept-" + 1);
+      d.setCode(i + "");
+    }
+    return depts;
   }
 
 }

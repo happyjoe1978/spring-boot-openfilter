@@ -1,0 +1,4 @@
+{
+  "where": { "status": 1 },
+  "include": [{ "relation": "departments" }]
+}
