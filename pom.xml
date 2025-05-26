@@ -10,9 +10,9 @@
     <relativePath /> <!-- lookup parent from repository -->
   </parent>
   <groupId>com.orangstar</groupId>
-  <artifactId>spring-boot-openapi-filter</artifactId>
+  <artifactId>spring-boot-openfilter</artifactId>
   <version>0.1.0</version>
-  <name>spring-boot-openapi-filter</name>
+  <name>spring-boot-openfilter</name>
   <description>Demo project for Spring Boot</description>
   <url />
   <licenses>
