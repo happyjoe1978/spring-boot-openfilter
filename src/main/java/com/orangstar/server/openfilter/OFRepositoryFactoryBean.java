@@ -19,6 +19,7 @@ public class OFRepositoryFactoryBean<T extends Repository<S, ID>, S, ID> extends
   }
 
   @Override
+  @NonNull
   protected RepositoryFactorySupport createRepositoryFactory(@NonNull EntityManager entityManager) {
     return new OFRepositoryFactory(entityManager, ofService);
   }

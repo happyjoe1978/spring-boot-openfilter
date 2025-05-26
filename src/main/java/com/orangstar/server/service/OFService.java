@@ -528,7 +528,7 @@ public class OFService {
     List<String> includeFieldNames = Utils.getFieldNamesFromInclude(filter);
     // System.out.println("关联字段：" + includeFieldNames);
 
-    Class<?> entityClass = entitys.getFirst().getClass();
+    Class<?> entityClass = entitys.get(0).getClass();
     List<String> noRelationFieldNames = Utils.getRelationFieldNamesFromEntity(entityClass, false);
     // System.out.println("entity非关联字段：" + noRelationFieldNames.toString());
     List<String> relationFieldNames = Utils.getRelationFieldNamesFromEntity(entityClass, true);
