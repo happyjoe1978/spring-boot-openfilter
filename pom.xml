@@ -34,10 +34,12 @@
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-data-jpa</artifactId>
+      <scope>provided</scope>
     </dependency>
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-web</artifactId>
+      <scope>provided</scope>
     </dependency>
 
     <dependency>
@@ -56,8 +58,18 @@
   <build>
     <plugins>
       <plugin>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-maven-plugin</artifactId>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-jar-plugin</artifactId>
+        <version>3.2.0</version>
+        <!-- <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-maven-plugin</artifactId> -->
+        <configuration>
+          <includes>
+            <include>com/orangstar/server/openfilter/**</include>
+            <include>com/orangstar/server/service/OFService.java</include>
+            <include>com/orangstar/server/util/Utils.java</include>
+          </includes>
+        </configuration>
       </plugin>
     </plugins>
   </build>
