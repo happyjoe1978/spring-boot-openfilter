@@ -61,9 +61,8 @@
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-jar-plugin</artifactId>
         <version>3.2.0</version>
-        <!-- <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-maven-plugin</artifactId> -->
         <configuration>
+          <!-- 打普通依赖包，可以注入其它项目 -->
           <includes>
             <include>com/orangstar/server/openfilter/**</include>
             <include>com/orangstar/server/service/OFService.java</include>
